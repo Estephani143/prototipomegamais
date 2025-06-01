@@ -2,7 +2,7 @@
 
 # Mega Mais - Associação de Benefícios Mútuos
 
-Bem-vindo ao repositório oficial do site da **Mega Mais Associação de Benefícios Mútuos**. Este projeto é um site institucional que apresenta informações da associação, oferece acesso a relatórios de transparência, emissão de boletos e contato para assistência.
+Bem-vindo ao repositório do site da **Mega Mais Associação de Benefícios Mútuos**. Este projeto é um site institucional que apresenta informações da associação, oferece acesso a relatórios de transparência, emissão de boletos e contato para assistência.
 
 ---
 
@@ -27,10 +27,3 @@ Este projeto contempla:
 - JavaScript (animações e interação)
 - Git para versionamento de código
 
----
-
-## Como Executar
-
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/SeuUsuario/prototipomegamais.git
