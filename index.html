@@ -236,44 +236,46 @@
 
 <script>
   function animarNumeros() {
-  const elementos = document.querySelectorAll('[data-numero]');
-  
-  elementos.forEach(el => {
-    const final = parseInt(el.getAttribute('data-numero'), 10);
-    let atual = 0;
+    const elementos = document.querySelectorAll('[data-numero]');
+    
+    elementos.forEach(el => {
+      const final = parseInt(el.getAttribute('data-numero'), 10);
+      let atual = 0;
 
-    const intervalo = setInterval(() => {
-      const incremento = Math.floor(Math.random() * (final - atual) / 5 + 1);
-      atual += incremento;
+      const intervalo = setInterval(() => {
+        const incremento = Math.floor(Math.random() * (final - atual) / 5 + 1);
+        atual += incremento;
 
-      if (atual >= final) {
-        el.textContent = final;
-        clearInterval(intervalo);
-      } else {
-        el.textContent = atual;
-      }
-    }, 50);
-  });
-}
-
-const numerosRelatorio = document.querySelector('.numeros-relatorio');
-let animado = false;
-
-if (numerosRelatorio) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !animado) {
-        animarNumeros();
-        animado = true;
-        observer.unobserve(numerosRelatorio);
-      }
+        if (atual >= final) {
+          el.textContent = final;
+          clearInterval(intervalo);
+        } else {
+          el.textContent = atual;
+        }
+      }, 50);
     });
-  }, {
-    threshold: 0.5 
-  });
+  }
 
-  observer.observe(numerosRelatorio);
-}
+  const numerosRelatorio = document.querySelector('.numeros-relatorio');
+  let animado = false;
+
+  function verificarSeEstaVisivel() {
+    if (!numerosRelatorio || animado) return;
+
+    const posicao = numerosRelatorio.getBoundingClientRect().top;
+    const alturaJanela = window.innerHeight;
+
+    if (posicao < alturaJanela * 0.8) { 
+      animarNumeros();
+      animado = true;
+      window.removeEventListener('scroll', verificarSeEstaVisivel);
+      window.removeEventListener('resize', verificarSeEstaVisivel);
+    }
+  }
+
+  window.addEventListener('scroll', verificarSeEstaVisivel);
+  window.addEventListener('resize', verificarSeEstaVisivel);
+  window.addEventListener('load', verificarSeEstaVisivel);
 </script>
 
 <!-- Relatório mensal -->
