@@ -1,5 +1,3 @@
-# prototipomegamais
-
 # Mega Mais - Associação de Benefícios Mútuos
 
 Bem-vindo ao repositório do site da **Mega Mais Associação de Benefícios Mútuos**. Este projeto é um site institucional que apresenta informações da associação, oferece acesso a relatórios de transparência, emissão de boletos e contato para assistência.
