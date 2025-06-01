@@ -1,0 +1,775 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* Toda estilização do corpo do site*/
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F7F7F7;
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/*Marcação para o botão de Pesquisa*/
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* Cor de fundo do menu de navegação (nav) */
+.navbar {
+  background-color: #0F364F; 
+  border: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;;
+}
+
+/* Scroll interno no dropdown - menu hambúrguer*/
+.dropdown-menu {
+  max-height: 60vh; 
+  overflow-y: auto;
+}
+
+/*Fonte dos telefones de contato do menu de navegação */
+.contato{
+  color: #D69B5F;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+.contato:hover {
+    text-decoration: none;
+    color: #8F4923;
+    transition: color 0.3s ease;
+}
+
+/*Links do site no início*/
+.navbar-nav .nav-item .nav-link {
+    color: #D69B5F; 
+     font-family: "Open Sans", sans-serif;
+     font-size: 1.4rem;
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+.navbar-nav .nav-item .nav-link:hover {
+    color: #8F4923;  
+    text-decoration: none; 
+}
+
+/*Imagem do navbar para telas grandes (Notebook / Computador) */
+#Logo {
+    max-width: 100%;  
+    height: auto;  
+    max-height: 120px; 
+    display: block;  
+    object-fit: contain;
+}
+
+/*Imagem do navbar para telas médias (tablets) */
+@media (max-width: 768px) {
+    #Logo {
+        max-height: 90px; 
+    }
+}
+
+/**Imagem do navbar para telas pequenas (celulares) */
+@media (max-width: 576px) {
+    #Logo {
+        max-height: 70px;
+    }
+}
+
+
+
+/* Estilo do botão do menu hamburguer */
+.navbar-toggler {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  position: relative; 
+}
+
+/* Estilo das linhas */
+.line {
+  width: 28px; 
+  height: 4px;
+  background-color: #d69b5f;
+  border-radius: 5px;
+  transition: transform 0.3s, opacity 0.3s;
+  margin: 4px 0;
+}
+
+/* Quando o menu está aberto */
+.navbar-toggler.is-opened .top {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggler.is-opened .middle {
+  opacity: 0;  
+}
+
+.navbar-toggler.is-opened .bottom {
+  transform: translateY(-8px) rotate(-45deg); 
+}
+
+/*Campo com imagem do Faq*/
+.duvida {
+    background-color: #D69B5F;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+/*Título*/
+.duvida-titulo {
+    font: 6rem "Montserrat", sans-serif;
+    font-weight: bolder;
+    color: #173D5D;
+    margin: 0;
+    padding-left: 1rem;
+    text-align: center;
+    filter:drop-shadow(6px 4px 4px rgba(0,0,0,0.25));
+}
+
+/*Botão*/
+.botao {
+    background-color: #173D5D;
+    color: #F7F7F7;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 2rem;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.botao:hover {
+    background-color: #0F364F;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    animation-play-state: paused;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Aumenta o tamanho do botão */
+    }
+    100% {
+        transform: scale(1); /* Retorna ao tamanho original */
+    }
+}
+
+/*Imagem do FAQ*/
+#imagem-faq {
+    display: block;  
+}
+
+ /*Responsividade da área da Imagem Principal*/ 
+.duvida {
+  background-color: #D69B5F;
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.duvida-titulo {
+  font: 2.5rem "Montserrat", sans-serif;
+  font-weight: bolder;
+  color: #173D5D;
+  margin: 0;
+  padding: 0;
+  filter: drop-shadow(6px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.botao {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+#imagem-faq {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+
+@media (min-width: 900px) {
+  .duvida-titulo {
+    font-size: 3rem;
+  }
+
+  .botao {
+    font-size: 1.8rem;
+    padding: 12px 24px;
+  }
+
+  #imagem-faq {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .duvida {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0px;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .duvida-titulo {
+    grid-area: 2 / 1 / 4 / 3;
+    font-size: 4.5rem;
+  }
+
+  .botao {
+   grid-area: 4 / 1 / 5 / 3;
+  font-size: 2rem;
+  padding: 12px 24px;
+  justify-self: center;
+  }
+
+  #imagem-faq {
+  grid-area: 1 / 3 / 6 / 6;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+  justify-self: center;
+  }
+}
+
+/*Fim da estilização da imagem principal*/
+
+            /*Botão para pesquisar*/
+            .perguntas {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-end;
+                align-items: flex-end;
+                align-content: flex-start;
+                margin-right: 4rem;
+                margin-top: -5rem;
+                margin-bottom: 5rem;
+            }
+
+/*Texto "FAQ"*/  
+            .container-h3 {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                padding-top: 1rem;
+            }
+
+            svg {
+                font: 5rem "Open Sans", sans-serif;
+                font-weight: bold;
+                width: 100%; height: 100%;
+            }
+            svg text {
+                animation: stroke 5s infinite alternate;
+                stroke-width: 2;
+                stroke: #173D5D;
+                font-size: 100px;
+            }
+            @keyframes stroke {
+                0%   {
+                    fill: rgba(15,54,79,0); stroke: rgba(15,54,79,1);
+                    stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+                }
+                70%  {fill: rgba(15,54,79,0); stroke: rgba(15,54,79,1); }
+                80%  {fill: rgba(15,54,79,0); stroke: rgba(15,54,79,1); stroke-width: 3; }
+                100% {
+                    fill: rgba(15,54,79,1); stroke: rgba(15,54,79,0);
+                    stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+                }
+            }
+            
+/*Linha embaixo do texto "FAQ"*/             
+             #linha {
+                width: 4%; 
+                height: 10px;  
+                background-color: #D69B5F;
+                filter: drop-shadow(6px 4px 4px rgba(0, 0, 0, 0.25)); 
+                margin: 20px 0; 
+                display: flex;
+            }
+
+/*Botão de Pesquisa*/
+            #buscar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .pesquisa-container {
+                position: relative;
+                display: flex;
+            }
+            
+            #pesquisa-input {
+                height: 40px;
+                padding: 10px;
+                font-size: 1rem;
+                border: 2px solid #0F364F;
+                background-color: #0F364F;
+                border-radius: 30px;
+                width: 200px;
+                outline: none;
+                color: #F7F7F7;
+                font-family: "Open Sans", sans-serif;
+                font-size: 1rem;
+            }
+            
+            #pesquisa-botao {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 0;
+            }
+            
+            #pesquisa-icone {
+                width: 20px;
+                height: 20px;
+            }
+/*Final do Botão de Pesquisa*/
+
+/*Perguntas*/
+.accordion-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+ 
+  .accordion-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }  
+
+            .accordion-container {
+                display: block;
+                max-width: 900px; 
+                margin: 0 auto;
+                margin-bottom: 2rem;
+            }
+            
+            .accordion-item {
+                width: 50%; 
+                background-color: #EDEDED;
+                padding: 10px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+                border-top-color: #0F364F;
+                border-top-style: ridge;
+                grid-column: span 2; 
+                width: 70%;
+            }
+            
+            .accordion-item button {
+                background-color: transparent;
+                border: none;
+                color: #0F364F;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 1.3rem; 
+                font-weight: bolder;
+                text-align: left;
+                width: 100%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+            
+            .accordion-item button::after {
+                content: "+"; 
+                color: #D69B5F;
+                margin-left: 10px;
+                font-size: 1.5rem;
+            }
+            
+            .accordion-item button:focus {
+                outline: none;
+            }
+            
+            .accordion-content {
+                background-color: #DEDEDE;
+                padding: 10px;
+                display: none;
+                font-family: "Open Sans", sans-serif;
+                font-size: 1rem; 
+                color: black;
+            }
+            
+            .accordion-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease;
+            }
+            
+            
+            .accordion-item.active .accordion-content {
+                display: block; 
+            }
+            
+            .accordion-item.active button::after {
+                content: "-";
+            }
+
+            .titulo-principal {
+                color: #D69B5F;
+                font-family: 'Open Sans', sans-serif; 
+                font-weight: bold;
+                font-size: 2.2rem;
+                text-align: justify;
+            }
+        
+            .titulo-principal::before {
+            content: "• ";
+            font-size: 2rem;
+            color: #D69B5F;
+            text-align: center;
+            }        
+
+            #principal {
+                display: grid;
+                grid-template-columns: 1fr 1fr; 
+                gap: 15px; 
+                width: 90%; 
+                margin: auto; /
+            }
+            
+            #principal > div {
+                padding: 20px;
+                text-align: center;
+            }
+/*Final do campo de perguntas*/  
+
+/*Rodapé*/                                                                   
+                    .link {
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        grid-template-rows: repeat(5, 1fr);
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        background-color:#0F364F;
+                        width: 100%;
+                        height: auto;
+                        padding: 1rem 1rem;
+                        padding-bottom: 2rem;
+                        padding-top: 2rem;
+                        }
+                        
+                        #rede { grid-area: 1 / 1 / 5 / 3; }
+                        .social-icons { grid-area: 5 / 1 / 6 / 3; }
+                        #app { grid-area: 1 / 4 / 5 / 6; }
+                        .app-icons { grid-area: 5 / 4 / 6 / 6; }
+
+    
+    .numeros {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        background-color:#0F364F;
+        width: 100%;
+        height: auto;
+        padding: 1rem 1rem;
+        padding-bottom: 2rem;
+        text-align: center;
+        }
+        
+        #roubo { grid-area: 1 / 1 / 6 / 3; }
+        #assis { grid-area: 1 / 3 / 6 / 4; }
+        #atendimento { grid-area: 1 / 4 / 6 / 6; }
+       
+    .rodape p #rede, #app {
+        font: 1.5rem "Open Sans", sans-serif;
+        color: #F7F7F7;
+        text-align: center;
+    }
+    
+
+    #rede
+     {
+        font: 1.5rem "Open Sans", sans-serif;
+        color: #F7F7F7;
+        text-align: center;
+    }
+
+    /*Imagens do rodapé*/
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    
+    }
+    
+    .social-icons img {
+        width: 53px;
+        height: 53px;
+        transition: transform 0.3s ease;
+    }
+    
+    .social-icons img:hover {
+        transform: scale(1.1);
+    }
+    
+    .app-icons {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
+    }
+    
+    .app-icons img {
+        width: 53px;
+        height: 53px;
+        transition: transform 0.3s ease;
+    }
+    
+    .app-icons img:hover {
+        transform: scale(1.1);
+    }
+    
+/*Telefones*/        
+.telefone-rodape {
+    font: 2rem "Open Sans", sans-serif;
+    color: #F7F7F7;
+    font-weight: bold;
+    text-align: center;
+}
+
+.numeros p {
+    margin-top: 0; 
+    font: 1.5rem "Open Sans", sans-serif;
+    color: #F7F7F7;
+    text-align: center;
+}
+
+.numeros i {
+    font: 1.3rem "Open Sans", sans-serif;
+    color: #F7F7F7;
+    font-style: italic;
+    text-align: center;
+}
+
+.numeros a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.numeros-icons {
+    transition: transform 0.3s ease;
+}
+
+.numeros-icons:hover {
+    transform: scale(1.1);
+}
+
+/*Texto final Copyright*/
+.final {
+    background-color: #D69B5F;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        height: 8%;
+        text-align: center;
+        box-sizing: border-box;
+      
+}
+
+.final p {
+    font: 1.3rem "Open Sans", sans-serif;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #f7f7f7;
+    text-align: center;
+    font-weight: 500;
+    filter: drop-shadow(5px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+/*Rodapé para telas menores*/
+@media (max-width: 768px) {
+  .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  #rede, #app{
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .social-icons,
+  .app-icons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .social-icons img,
+  .app-icons img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .numeros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .numeros p {
+    font-size: 1rem;
+  }
+
+  .numeros i {
+    font-size: 0.9rem;
+  }
+
+  .telefone-rodape {
+    font-size: 1.2rem;
+  }
+
+  .final {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .final p {
+    font-size: 0.9rem;
+  }
+}
+
+/*Fim do Rodapé*/ 
+
+/*Responsividade*/
+@media (max-width: 768px) {
+    #linha {
+        width: 20%; 
+        height: 10px;  
+        background-color: #D69B5F;
+        filter: drop-shadow(6px 4px 4px rgba(0, 0, 0, 0.25)); 
+        display: flex;
+      
+    }
+
+    .perguntas {
+        display: none;
+    }
+
+    h1, text {
+        font-size: 2rem;
+        padding: 10px;
+    }
+    
+    #principal {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: normal;
+        align-content: normal;
+    }
+    
+    .assistencia h4,
+    .cancelamento h4,
+    .cadastro h4,
+    .eventos h4,
+    .pagamento h4,
+    .rastreador h4,
+    .outras h4 {
+        font-size: 1.6rem;
+        text-align: center;
+        color: #D69B5F;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        white-space: nowrap; 
+    }
+    
+    .accordion-container {
+        width: 90%;
+    }
+    
+    .accordion-item {
+        width: 100%;
+    }
+
+.accordion-item {
+    width: 100%; 
+    margin-bottom: 5px;
+    border-top: none; 
+    background-color: #0F364F;
+}
+
+.accordion-item button {
+    font-size: 1.2rem;
+    padding: 12px; 
+    border: none; 
+    color: #F7F7F7;
+    font-weight: 600;
+}
+
+.accordion-item button::after {
+    content: ""; 
+}
+
+.accordion-item.active button::after {
+    content: "";
+}
+
+.accordion-content {
+    background-color: #F5F5F5;
+    font-size: 1rem;
+}
+}
+/*Fim da Responsividade*/

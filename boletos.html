@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EMISSÃO DE BOLETOS | MEGA MAIS PROTEÇÃO VEICULA</title>
+  <link rel="icon" href="img/favicon.png" type="image/x-icon"> 
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #F7F7F7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .logo {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #173D5D;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 0.5rem 0 0.2rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #D69B5F;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #b97f47;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .form-container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo que volta para o index.html -->
+  <a href="index.html">
+    <img src="img/logo.png" alt="Logo da Mega Mais" class="logo" width="300" />
+  </a>
+  
+<!--Formulário-->
+  <div class="form-container">
+    <h1>Emissão de Boleto</h1>
+    <form id="boleto-form">
+      <label for="cpf">CPF do Associado</label>
+      <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" required />
+
+      <label for="base">Selecione a Base</label>
+      <select id="base" name="base" required>
+        <option value="">Selecione...</option>
+        <option value="mega1">Mega Mais 1 (Veículos até R$ 150.000)</option>
+        <option value="mega2">Mega Mais 2 (Motos e veículos acima de R$ 150.000)</option>
+      </select>
+
+      <button type="submit">Acessar Boleto</button>
+    </form>
+  </div>
+
+  <!-- Script para integração com API Hinova -->
+  <script>
+    document.getElementById('boleto-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const cpf = document.getElementById('cpf').value.trim();
+      const base = document.getElementById('base').value;
+
+      // Validação simples
+      if (!cpf || !base) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      // Aqui futuramente será a requisição para a API da Hinova
+      console.log(`CPF: ${cpf} | Base: ${base}`);
+      
+      // Exemplo de redirecionamento futuro:
+      // window.location.href = `https://api.hinova.com/boleto?cpf=${cpf}&base=${base}`;
+      
+      alert('Desculpe. Ainda não será possível utilizar esse sistema');
+    });
+  </script>
+
+</body>
+</html>
